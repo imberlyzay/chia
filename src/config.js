@@ -1,15 +1,18 @@
 import Phaser from 'phaser'
 
 export default {
-  type: Phaser.AUTO,
+  type: Phaser.CANVAS,
   parent: 'content',
+
+  backgroundColor: '#FCF3CF',
+  width: window.innerWidth * window.devicePixelRatio,
+  height: window.innerHeight * window.devicePixelRatio,
+
   physics: {
     default: 'arcade',
     arcade: {
       gravity: { y: 200 }
     }
   },
-  // width: 800,
-  // height: 600,
   localStorageName: 'phaseres6webpack'
 }
