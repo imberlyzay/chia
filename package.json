@@ -1,7 +1,7 @@
 {
   "name": "chia",
   "version": "2.0.0",
-  "description": "A bootstrap project for create games with Phaser + ES6 + Webpack.",
+  "description": "A virtual pet so easy to care for, you almost feel like you're a chia",
   "author": "Kimberly Zawacki <ximberlyzawacki@gmail.com>",
   "main": "index.js",
   "scripts": {

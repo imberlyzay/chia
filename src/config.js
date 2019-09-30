@@ -4,7 +4,7 @@ export default {
   type: Phaser.CANVAS,
   parent: 'content',
 
-  backgroundColor: '#FCF3CF',
+  backgroundColor: '#9CCC65',
   width: window.innerWidth * window.devicePixelRatio,
   height: window.innerHeight * window.devicePixelRatio,
 
@@ -14,5 +14,5 @@ export default {
       gravity: { y: 200 }
     }
   },
-  localStorageName: 'phaseres6webpack'
+  localStorageName: 'chia'
 }
