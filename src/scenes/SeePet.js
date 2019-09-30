@@ -1,5 +1,4 @@
 import Phaser from 'phaser'
-import MyPet from '../sprites/MyPet'
 
 export default class SeePet extends Phaser.Scene {
   constructor() {
@@ -8,6 +7,9 @@ export default class SeePet extends Phaser.Scene {
   init() {
     this.birdPet;
     this.healthMeter;
+    this.start = 0;
+    this.end = 1;
+    this.startTime;
   }
 
   preload() {
@@ -33,13 +35,29 @@ export default class SeePet extends Phaser.Scene {
       frames: this.anims.generateFrameNumbers('birdPet', {start: 0, end: 1}),
       frameRate: 5
     })
+
+    this.startTime = this.time.now
+  }
+
+  healthDown (start, end) {
+    this.anims.create({
+      key: 'health-down',
+      frames: this.anims.generateFrameNumbers('healthMeter', {start: start, end: end})
+    })
+
+    this.healthMeter.anims.play('health-down')
   }
 
   update () {
+
     if (this.input.activePointer.isDown) {
       this.birdPet.anims.play('flap')
-    } else {
-      //this.birdPet.anims.stop('flap wings')
+    }
+    if (this.time.now > this.startTime + 10000) {
+      healthDown(this.start, this.end)
+      this.start ++
+      this.end ++
+      this.startTime = this.time.now
     }
   }
 }
