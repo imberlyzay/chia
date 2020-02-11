@@ -28,7 +28,6 @@ export default class extends Phaser.Scene {
       asset: 'hummingbird'
     })
 
-
     this.add.image(230, 900, 'manyMushrooms')
     this.add.text(900, 70, 'Chia ', {
       fill: '#FFC300',
